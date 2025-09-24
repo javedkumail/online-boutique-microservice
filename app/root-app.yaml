@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/javedkumail/online-boutique-microservice/tree/main/app
-    path: release
+    path: release/kubernetes-manifests.yaml
     targetRevision: main
   destination:
     server: https://argocd-aks-cluster-02-dns-2dfpypzu.hcp.centralindia.azmk8s.io:443
