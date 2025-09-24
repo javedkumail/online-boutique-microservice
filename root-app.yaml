@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: Online-boutique
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/javedkumai/microservices-demo
+    path: release
+    targetRevision: main
+  destination:
+    server: https://argocd-aks-cluster-02-dns-2dfpypzu.hcp.centralindia.azmk8s.io:443
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
