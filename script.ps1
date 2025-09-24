@@ -1,5 +1,7 @@
+# Replace all Artifact Registry image paths with GCR
 Get-ChildItem -Recurse -Include *.yml,*.yaml | ForEach-Object {
   (Get-Content $_.FullName) `
-    -replace 'us-central1-docker\.pkg\.dev/google-samples/microservices-demo','gcr.io/google-samples/microservices-demo' |
+    -replace 'gcr.io/google-samples/microservices-demo',
+             'docker.io/GoogleCloudPlatform/microservices-demo' |
     Set-Content $_.FullName
 }
